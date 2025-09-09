@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BrickBlazt</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="style/title.css">
     </head>
     <body style="background-color: black;">
         <hgroup>
@@ -15,13 +16,27 @@
             </p>
         </hgroup>
         
-        <section id="game-section">
-            <p>ROUND <span id="round-span">0</span></p> &emsp;
-            <input id="word-input" type="text" placeholder="ENTER"></input>
-            <button onclick="submitWord()">SUBMIT</button>
-        </section>
+        <div id="right-div">
+            <section id="requirements-section">
+                <p>REQUIREMENTS:</p>
+                <ul id="requirements-list">
+                    <!-- GEN -->
+                </ul>
+            </section>
+
+            <section id="game-section">
+                <p>ROUND <span id="round-span">0</span></p> &emsp;
+                <div>
+                    <input id="word-input" type="text" placeholder="ENTER"></input><br>
+                    <span id="log-para">0 characters</span>
+                </div>
+                <button onclick="submitWord()">SUBMIT</button>
+            </section>
+        </div>
         
         <script src="script/words.js"></script>
         <script src="script/script.js"></script>
+        <script src="script/creators.js"></script>
+        <script src="script/requirements.js"></script>
     </body>
 </html>

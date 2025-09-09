@@ -1,0 +1,8 @@
+
+hgroup {
+    h1 {
+        background-image: linear-gradient(rgba(72, 255, 139, 1), rgba(0, 111, 52, 1));
+        color: transparent;
+        background-clip: text;
+    }
+}
