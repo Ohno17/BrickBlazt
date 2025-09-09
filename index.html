@@ -7,12 +7,21 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body style="background-color: black;">
-        <div id="game-container">
-            <canvas id="game-canvas"></canvas>
-        </div>
+        <hgroup>
+            <h1>BrickBlazt</h1>
+            <p>
+                Word game of words
+                <noscript>THIS Game requires JAVASCRIPT Enabled to PLAY!</noscript>
+            </p>
+        </hgroup>
         
-        <script defer src="script/vars.js"></script>
-        <script defer src="script/canvas.js"></script>
-        <script defer src="script/script.js"></script>
+        <section id="game-section">
+            <p>ROUND <span id="round-span">0</span></p> &emsp;
+            <input id="word-input" type="text" placeholder="ENTER"></input>
+            <button onclick="submitWord()">SUBMIT</button>
+        </section>
+        
+        <script src="script/words.js"></script>
+        <script src="script/script.js"></script>
     </body>
 </html>
