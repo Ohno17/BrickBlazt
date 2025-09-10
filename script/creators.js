@@ -4,7 +4,7 @@ function createCustomRequirement(func, description) {
 }
 
 function createConstantRequirement(word) {
-    return createCustomRequirement((input) => input == word, `Word must be "${word}"`);
+    return createCustomRequirement((input) => input == word.toLowerCase(), `Word must be "${word}"`);
 }
 
 function createLengthRequirement(length) {
@@ -20,9 +20,18 @@ function createMaximumLengthRequirement(length) {
 }
 
 function createLeadingLetterRequirement(letter) {
-    return createCustomRequirement((input) => input[0].toLowerCase() == letter.toLowerCase(), `Word must start with "${letter}"`);
+    return createCustomRequirement((input) => input[0] == letter.toLowerCase(), `Word must start with "${letter}"`);
 }
 
 function createTrailingLetterRequirement(letter) {
-    return createCustomRequirement((input) => input[input.length - 1].toLowerCase() == letter.toLowerCase(), `Word must end with "${letter}"`);
+    return createCustomRequirement((input) => input[input.length - 1] == letter.toLowerCase(), `Word must end with "${letter}"`);
+}
+
+function createContainingLetterRequirement(letter) {
+    return createCustomRequirement((input) => {
+        for (let i = 0; i < input.length; i++) {
+            if (input[i] == letter.toLowerCase()) return true;
+        }
+        return false;
+    }, `Word must contain "${letter}"`);
 }

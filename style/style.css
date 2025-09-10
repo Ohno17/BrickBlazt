@@ -44,8 +44,11 @@ button, input {
     }
 
     input {
+        width: 20em;
         height: 3em;
+
         padding: 0;
+
         text-align: center;
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;

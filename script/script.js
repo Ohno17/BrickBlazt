@@ -5,9 +5,11 @@ inputElement.addEventListener("keydown", (e) => {
 const roundElement = document.getElementById("round-span");
 const logElement = document.getElementById("log-para");
 inputElement.addEventListener("keyup", (e) => {
+    if (e.key == "Enter") return;
     logElement.innerHTML = `${inputElement.value.length} characters`;
     logElement.className = "";
 });
+logElement.innerHTML = `${inputElement.value.length} characters`;
 
 var round = 0;
 var requirements = [];
@@ -26,11 +28,13 @@ function doesFollowRequirements(word) {
 }
 
 function submitWord() {
-    if (doesFollowRequirements(inputElement.value) && isValidWord(inputElement.value)) {
+    if (doesFollowRequirements(inputElement.value.toLowerCase()) && isValidWord(inputElement.value.toLowerCase())) {
         round++;
         roundElement.innerHTML = round;
         inputElement.value = "";
         inputElement.classList = "";
+        logElement.innerHTML = "0 characters";
+        logElement.className = "";
 
         requirements = [];
         roundRequirements();

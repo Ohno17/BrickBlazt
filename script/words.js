@@ -1,5 +1,5 @@
 const words = [
-	"BrickBlazt",
+	"brickblazt",
 	"hexameter",
 	"pupil",
 	"boyish",
@@ -4435,6 +4435,7 @@ const words = [
 	"truppen",
 	"gebiete",
 	"cavalier",
+	"avacado",
 	"voracity",
 	"peignoir",
 	"ditties",
