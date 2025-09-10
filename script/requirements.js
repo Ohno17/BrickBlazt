@@ -72,8 +72,21 @@ function roundRequirements() {
     }
 }
 
+function randomLetterFromString(str) {
+    return str[Math.floor(Math.random() * str.length)];
+}
+
 function generateRequirements() {
-    requirements.push(createMinumumLengthRequirement(Math.ceil(round / 8) + 1));
+    requirements.push(createMinimumLengthRequirement(Math.min(round - 7, 7)));
+    if (round > 5 && round < 15) requirements.push(createContainingLetterRequirement(randomLetterFromString("aeiou")));
+    if (round > 10 && round < 15) requirements.push(createContainingLetterRequirement(randomLetterFromString("abcdenostu")));
+    if (round >= 15) requirements.push(createContainingLetterRequirement(randomLetterFromString("abcdefghijklmnopqrstuvwxyz")));
+
+    if (round > 20 && round < 30) requirements.push(createContainingLetterRequirement(randomLetterFromString("abcdefghijklmnopqrstuvwxyz")));
+    if (round > 25) requirements.push(createLeadingLetterRequirement(randomLetterFromString("abcdefghijklmnopqrstuvwxyz")));
+    if (round > 30) requirements.push(createTrailingLetterRequirement(randomLetterFromString("abcdefghijklmnopqrstuvwxyz")));
+
+    if (round > 35) requirements.push(createContainingLetterRequirement(randomLetterFromString("abcdefghijklmnopqrstuvwxyz")));
 }
 
 // Do ROUND 0
