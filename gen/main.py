@@ -19,7 +19,7 @@ with open(os.path.join(sys.path[0], "raw_words.txt"), "r", encoding='utf-8') as 
         words.add(line.lower()[:-1])
 
 with open(os.path.join(sys.path[0], "new_words.js"), "w", encoding='utf-8') as output:
-        output.write("const words = [\n")
+        output.write("const words = new Set([\n")
         for word in words:
             output.write("\t\"" + word + "\",\n")
-        output.write("]")
+        output.write("]);")

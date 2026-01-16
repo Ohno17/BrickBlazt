@@ -14,21 +14,15 @@ logElement.innerHTML = `${inputElement.value.length} characters`;
 var round = 0;
 var requirements = [];
 
-function isValidWord(word) {
-    for (let i = 0; i < words.length; i++) {
-        if (word == words[i]) return words[i];
-    }
-}
-
 function doesFollowRequirements(word) {
     for (let i = 0; i < requirements.length; i++) {
-        if (!requirements[i].validator(word)) return false;
+        if (!requirements[i].validator(word.toLowerCase())) return false;
     }
     return true;
 }
 
 function submitWord() {
-    if (doesFollowRequirements(inputElement.value.toLowerCase()) && isValidWord(inputElement.value.toLowerCase())) {
+    if (doesFollowRequirements(inputElement.value.toLowerCase()) && words.has(inputElement.value.toLowerCase())) {
         round++;
         roundElement.innerHTML = round;
         inputElement.value = "";
